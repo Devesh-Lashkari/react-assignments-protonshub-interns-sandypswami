@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
-
 import Avatar from "@mui/material/Avatar";
 import "./Header.css";
 import { Link } from "react-router-dom";
@@ -12,8 +11,8 @@ function Header(props) {
 	return (
 		<div className="header">
 			<div className="header__left">
-				<MenuIcon />
 				<Link to="/">
+					<HomeIcon />
 					<img
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png"
 						alt="pokemon"
