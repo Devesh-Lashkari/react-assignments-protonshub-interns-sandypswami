@@ -1,37 +1,43 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import Pokemon from "./Pokemon";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
+import Home from "./Home";
+import Result from "./Result";
+import Random from "./Random";
+import Searchstate from "./context/SearchState";
 
 function App() {
-	const [Search, setSearch] = useState();
 	return (
-		<div className="App">
+		<Searchstate>
 			<Router>
-				<Header changeWord={(Search) => setSearch(Search)} />
-				{console.log(Search)}
 				<Routes>
 					<Route
 						exact
-						path="/search/:searchTerm"
+						path="/"
 						element={
-							<div className="app__page">
-								<Pokemon input={Search} />
+							<div>
+								<Home />
 							</div>
 						}
 					></Route>
 					<Route
-						path="/"
+						path="/search"
 						element={
-							<div className="app__page">
-								<h1>Search Pokemon 🐾</h1>
+							<div>
+								<Result />
+							</div>
+						}
+					></Route>
+					<Route
+						path="/random"
+						element={
+							<div>
+								<Random />
 							</div>
 						}
 					></Route>
 				</Routes>
 			</Router>
-		</div>
+		</Searchstate>
 	);
 }
 
