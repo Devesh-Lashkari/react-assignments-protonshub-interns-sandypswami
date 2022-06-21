@@ -159,33 +159,9 @@ function Slots() {
 				{slots.map((slot) => {
 					return (
 						<div key={slot.id} className="card__box">
-							{/* <Card className="slot__card" sx={{ minWidth: 375 }}>
-								<Typography
-									sx={{ fontSize: 14 }}
-									color="text.secondary"
-									gutterBottom
-								>
-									{slot.data}
-								</Typography>
-								{slot.occupied && (
-									<Button
-										onClick={() => {
-											handleOpenExit();
-											checkcharges(slot.id);
-											setcurrentID(slot.id);
-										}}
-									>
-										Exit
-									</Button>
-								)}
-							</Card> */}
 							<div className="final__box">
 								<h1>PSB {slot.data}</h1>
-								<h4>
-									{slot.occupied
-										? "Currently Unavailable"
-										: "Currently available"}
-								</h4>
+								<h4>{slot.occupied ? "Booked" : "Currently available"}</h4>
 								{slot.occupied && (
 									<Button
 										variant="contained"
